@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Script from "next/script";
 import styles from "../styles/Home.module.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -18,10 +19,18 @@ export default function Home() {
       {/* <Script src='/sc.js' strategy="lazyOnload"></Script> */}
       <nav className={styles.mainnav}>
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Blog</li>
-          <li>Contact</li>
+          <Link href="/">
+            <li>Home</li>
+          </Link>
+          <Link href="/about">
+            <li>About</li>
+          </Link>
+          <Link href="/blog">
+            <li>Blog</li>
+          </Link>
+          <Link href="/contact">
+            <li>Contact</li>
+          </Link>
         </ul>
       </nav>
       <main className={styles.main}>
@@ -49,16 +58,7 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
+        Copyright ©️ {new Date().getFullYear()} urvishmeghani111@gmail.com
       </footer>
     </div>
   );
